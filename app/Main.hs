@@ -3,6 +3,7 @@ module Main (main) where
 import Lib
 import Chapter1
 import Chapter2
+import Chapter4
 
 main :: IO ()
 main = do

@@ -79,4 +79,21 @@ To determine if two functions are equal, you would need to check if they return 
 Even for finite input domains, checking equality of functions would require applying the functions to every input in the domain and comparing their outputs. This can be computationally expensive or infeasible.
 
 For certain functions, especially those involving recursion or higher-order functions, it is undecidable whether two functions are equal. This is related to the Halting Problem, which states that it is impossible to determine whether an arbitrary program will terminate.
+
+
+It is feasible for function types to be instances of Eq only in cases where the domain of the function is finite and small, and equality can be explicitly checked for all inputs.
+
+For functions with a finite input domain like Bool (True and False), equality can be determined by explicitly checking the outputs for both possible inputs:
+    f1 :: Bool -> Bool
+    f1 True  = True
+    f1 False = False
+
+    f2 :: Bool -> Bool
+    f2 True  = True
+    f2 False = False
+
+    -- Check equality for all inputs
+    equalBoolFuncs = f1 True == f2 True && f1 False == f2 False  -- True
+
+For functions over enumeration types (finite types like data Day = Monday | Tuesday | ...), equality can also be checked by comparing outputs for all possible inputs.
 -}
