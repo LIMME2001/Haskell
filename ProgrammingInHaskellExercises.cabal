@@ -25,6 +25,8 @@ source-repository head
 
 library
   exposed-modules:
+      Chapter1
+      Chapter2
       Lib
   other-modules:
       Paths_ProgrammingInHaskellExercises
